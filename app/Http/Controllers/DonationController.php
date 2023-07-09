@@ -29,7 +29,7 @@ class DonationController extends Controller
     {   
         $validator = Validator::make($request->all(), [
             'firstName' => 'required',
-            // 'lastName' => 'required',
+            'lastName' => 'required',
             // 'companyName' => 'required',
             // 'email' => 'required|email',
             // 'phoneNumber' => 'required',
