@@ -42,23 +42,24 @@
       $('#register-form').reset();
   });
 
-  $('#submit').on('click', function(){
-    $("#submit"). attr("disabled", true);
-
-    var _csrfToken = $('meta[name="csrf-token"]').attr('content');
-    var firstName = $('#first_name').val();
-    var lastName = $('#last_name').val();
-    var companyName = $('#company').val();
-    var email = $('#email').val();
-    var phoneNumber = $('#phone_number').val();
-    var sex = $('#meal_preference').val();
-    var paymentMethod = getPaymentMethod();
-    var cardNumber = $('#chequeno').val();
-    var expiredDay = $('#blank_name').val();
-    var cvn = $('#payable').val();
-    var amount = $('#value-lower').val();
+  $('#submit').on('click', function(e){
+    e.preventDefault();
+    clearErr();
     
-    var donationData = {
+    const _csrfToken = $('meta[name="csrf-token"]').attr('content');
+    const firstName = $('#first_name').val();
+    const lastName = $('#last_name').val();
+    const companyName = $('#company').val();
+    const email = $('#email').val();
+    const phoneNumber = $('#phone_number').val();
+    const sex = $('.selected').attr('value');
+    const paymentMethod = getPaymentMethod();
+    const cardNumber = $('#chequeno').val();
+    const expiredDay = $('#blank_name').val();
+    const cvn = $('#payable').val();
+    const amount = 10 * $('.noUi-handle').attr('aria-valuenow');
+    
+    const donationData = {
         firstName: firstName,
         lastName: lastName,
         companyName: companyName,
@@ -87,7 +88,6 @@
 
   function printMsg (msg) {
     if($.isEmptyObject(msg.error)){
-        console.log(msg.success);
         $('.alert-block').css({'display': 'block', 'color': 'green', 'margin-bottom': '20px'}).append('<strong>'+msg.success+'</strong>');
     }else{
       $.each( msg.error, function( key, value ) {
@@ -99,12 +99,20 @@
   function getPaymentMethod(){
     const payments = document.querySelectorAll('input[name="payment"]');
     var selectedPaymentMethod = '';
+
     for (const payment of payments) {
         if (payment.checked) {
             selectedPaymentMethod = payment.value;
             break;
         }
     }
-  }    
+
+    return selectedPaymentMethod;
+  }
+  
+  function clearErr(){
+    $('.donation-error').text('');
+    $('.alert-block').css({'display': 'none'});
+  }
 
 })(jQuery);

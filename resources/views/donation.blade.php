@@ -38,27 +38,27 @@
                                 <div class="form-input">
                                     <label for="first_name" class="required">First name</label>
                                     <input type="text" name="first_name" id="first_name" />
-                                    <span id="firstName_err"></span>
+                                    <span id="firstName_err" class="donation-error"></span>
                                 </div>
                                 <div class="form-input">
                                     <label for="last_name" class="required">Last name</label>
                                     <input type="text" name="last_name" id="last_name" />
-                                    <span id="lastName_err"></span>
+                                    <span id="lastName_err" class="donation-error"></span>
                                 </div>
                                 <div class="form-input">
                                     <label for="company" class="required">Company</label>
                                     <input type="text" name="company" id="company" />
-                                    <span id="companyName_err"></span>
+                                    <span id="companyName_err" class="donation-error"></span>
                                 </div>
                                 <div class="form-input">
                                     <label for="email" class="required">Email</label>
                                     <input type="text" name="email" id="email" />
-                                    <span id="email_err"></span>
+                                    <span id="email_err" class="donation-error"></span>
                                 </div>
                                 <div class="form-input">
                                     <label for="phone_number" class="required">Phone number</label>
                                     <input type="text" name="phone_number" id="phone_number" />
-                                    <span id="phoneNumber_err"></span>
+                                    <span id="phoneNumber_err" class="donation-error"></span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -71,10 +71,10 @@
                                             <option value="please-select">Please select...</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
-                                            <option value="others">others</option>
+                                            <option value="others">Others</option>
                                         </select>
                                     </div>
-                                    <span id="sex_err"></span>
+                                    <span id="sex_err" class="donation-error"></span>
                                 </div>
                                 <div class="form-radio">
                                     <div class="label-flex">
@@ -97,22 +97,22 @@
                                             <span class="check"></span>
                                         </div>
                                     </div>
-                                    <span id="paymentMethod_err"></span>
+                                    <span id="paymentMethod_err" class="donation-error"></span>
                                 </div>
                                 <div class="form-input">
                                     <label for="chequeno" class="required">Card Number</label>
                                     <input type="text" name="chequeno" id="chequeno" />
-                                    <span id="cardNumber_err"></span>
+                                    <span id="cardNumber_err" class="donation-error"></span>
                                 </div>
                                 <div class="form-input">
                                     <label for="blank_name" class="required">Expiration</label>
                                     <input type="text" name="blank_name" id="blank_name" />
-                                    <span id="expiredDay_err"></span>
+                                    <span id="expiredDay_err" class="donation-error"></span>
                                 </div>
                                 <div class="form-input">
                                     <label for="payable" class="required">CVN</label>
                                     <input type="text" name="payable" id="payable" />
-                                    <span id="cvn_err"></span>
+                                    <span id="cvn_err" class="donation-error"></span>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +122,7 @@
                                 <div id="slider-margin"></div>
                                 <span class="donate-value" id="value-lower"></span>
                             </div>
-                            <span id="amount_err"></span>
+                            <span id="amount_err" class="donation-error"></span>
                         </div>
                         <div class="form-submit">
                             <input type="submit" value="Submit" class="submit" id="submit" name="submit" />

@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('phone_number');
             $table->integer('amount');
             $table->string('payment_mode');
-            $table->bigInteger('card_number');
             $table->timestamps();
         });
     }
